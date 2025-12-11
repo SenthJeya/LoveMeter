@@ -63,8 +63,16 @@ function Core() {
   const handleSubmit = (e) => {
     if (result) return; // Prevent recalculation if result is showing
 
-    if (!name1 || !name2) {
-      toast.error('Please fill in both name fields.');
+    if (!name1 && !name2) {
+      toast.error("King & Queen can't be Empty");
+      return;
+    }
+    if (!name1) {
+      toast.error("King can't be empty");
+      return;
+    }
+    if (!name2) {
+      toast.error("Queen can't be empty");
       return;
     }
 
