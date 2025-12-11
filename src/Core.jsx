@@ -45,15 +45,15 @@ function Core() {
     if (sameStart && sameLength) {
       return getRandomPercentage(95, 100);
     } else if (sameStart || sameLength) {
-      return getRandomPercentage(80, 90);
+      return getRandomPercentage(85, 90);
     } else {
       const reminder = countRemainingLetters(name1, name2);
       if (reminder === 0) {
-        return getRandomPercentage(70, 85);
+        return getRandomPercentage(80, 85);
       } else if (reminder % 2 !== 0) {
-        return getRandomPercentage(60, 70);
+        return getRandomPercentage(75, 80);
       } else {
-        return getRandomPercentage(50, 60);
+        return getRandomPercentage(70, 75);
       }
     }
   };
