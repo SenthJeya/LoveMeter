@@ -1,50 +1,51 @@
-@keyframes hitTop {
-  0% {
-    top: 100%;
-    transform: translateY(-100%) translateX(-50%) scale(1);
-  }
-  50% {
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%) scale(1.1);
-  }
-  100% {
-    top: 100%;
-    transform: translateY(-100%) translateX(-50%) scale(1);
-  }
+@keyframes hitFromTop {
+  0% { top: 0%; transform: translateY(0%) translateX(-50%) scale(1); opacity: 1; }
+  50% { top: 100%; transform: translateY(-50%) translateX(-50%) scale(1.2); opacity: 1; }
+  100% { top: 0%; transform: translateY(0%) translateX(-50%) scale(1); opacity: 0; }
 }
 
-@keyframes hitBottom {
-  0% {
-    top: 0%;
-    transform: translateY(0%) translateX(-50%) scale(1);
-  }
-  50% {
-    top: 50%;
-    transform: translateY(-50%) translateX(-50%) scale(1.1);
-  }
-  100% {
-    top: 0%;
-    transform: translateY(0%) translateX(-50%) scale(1);
-  }
+@keyframes hitFromBottom {
+  0% { top: 100%; transform: translateY(-100%) translateX(-50%) scale(1); opacity: 1; }
+  50% { top: 0%; transform: translateY(-50%) translateX(-50%) scale(1.2); opacity: 1; }
+  100% { top: 100%; transform: translateY(-100%) translateX(-50%) scale(1); opacity: 0; }
 }
 
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+@keyframes hitFromLeft {
+  0% { left: 0%; transform: translateX(0%) translateY(-50%) scale(1); opacity: 1; }
+  50% { left: 100%; transform: translateX(-50%) translateY(-50%) scale(1.2); opacity: 1; }
+  100% { left: 0%; transform: translateX(0%) translateY(-50%) scale(1); opacity: 0; }
+}
+
+@keyframes hitFromRight {
+  0% { left: 100%; transform: translateX(-100%) translateY(-50%) scale(1); opacity: 1; }
+  50% { left: 0%; transform: translateX(-50%) translateY(-50%) scale(1.2); opacity: 1; }
+  100% { left: 100%; transform: translateX(-100%) translateY(-50%) scale(1); opacity: 0; }
 }
 
 .animate-hit-top {
-  animation: hitTop 1s ease-out forwards;
+  animation: hitFromTop 1s ease-out forwards;
   left: 50%;
 }
 
 .animate-hit-bottom {
-  animation: hitBottom 1s ease-out forwards;
+  animation: hitFromBottom 1s ease-out forwards;
   left: 50%;
+}
+
+@media (min-width: 640px) {
+  .animate-hit-top {
+    animation: hitFromLeft 1s ease-out forwards;
+    top: 50% !important;
+  }
+  .animate-hit-bottom {
+    animation: hitFromRight 1s ease-out forwards;
+    top: 50% !important;
+  }
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .animate-scroll-left {

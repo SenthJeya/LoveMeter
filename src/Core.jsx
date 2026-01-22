@@ -167,11 +167,11 @@ function Core() {
         </div>
       </div>
 
-      <main className="flex flex-col relative" style={{ height: 'calc(100vh - 12rem)' }}> {/* Adjusted height: Header + Footer + Top Notice */}
+      <main className="flex-grow flex flex-col sm:flex-row relative">
         {/* Blue top section with gradient */}
-        <div className="h-1/2 bg-gradient-to-b from-blue-700 to-gray-900 flex items-end justify-center pb-20 relative overflow-hidden">
+        <div className="flex-1 bg-gradient-to-b sm:bg-gradient-to-r from-blue-700 to-gray-900 flex items-end sm:items-center justify-center sm:justify-end pb-20 sm:pb-0 sm:pr-32 overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
-          <div className={`max-w-xs w-full p-6 backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 shadow-2xl z-10 transition-all duration-500 transform ${animate ? 'animate-hit-top absolute top-1/2 -translate-y-full opacity-0' : 'relative opacity-100 hover:scale-105'}`}>
+          <div className={`max-w-xs w-full p-6 backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 shadow-2xl transition-all duration-500 transform ${animate ? 'animate-hit-top absolute top-1/2 -translate-y-1/2 z-40' : 'relative opacity-100 hover:scale-105 z-10'}`}>
             <label htmlFor="name1" className="block text-3xl font-serif font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 drop-shadow-md flex items-center justify-center gap-2">
               <Crown className="w-8 h-8 text-yellow-400 fill-current" /> King
             </label>
@@ -202,9 +202,9 @@ function Core() {
         </div>
 
         {/* Pink bottom section with gradient */}
-        <div className="h-1/2 bg-gradient-to-t from-pink-700 to-gray-900 flex items-start justify-center pt-20 relative overflow-hidden">
+        <div className="flex-1 bg-gradient-to-t sm:bg-gradient-to-l from-pink-700 to-gray-900 flex items-start sm:items-center justify-center sm:justify-start pt-20 sm:pt-0 sm:pl-32 overflow-hidden">
            <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/hearts.png')] pointer-events-none"></div>
-          <div className={`max-w-xs w-full p-6 backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 shadow-2xl z-10 transition-all duration-500 transform ${animate ? 'animate-hit-bottom absolute top-1/2 -translate-y-0 opacity-0' : 'relative opacity-100 hover:scale-105'}`}>
+          <div className={`max-w-xs w-full p-6 backdrop-blur-md bg-white/10 rounded-2xl border border-white/20 shadow-2xl transition-all duration-500 transform ${animate ? 'animate-hit-bottom absolute top-1/2 -translate-y-1/2 z-40' : 'relative opacity-100 hover:scale-105 z-10'}`}>
             <label htmlFor="name2" className="block text-3xl font-serif font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 drop-shadow-md flex items-center justify-center gap-2">
               <Crown className="w-8 h-8 text-yellow-400 fill-current" /> Queen
             </label>
